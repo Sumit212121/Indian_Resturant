@@ -1,0 +1,313 @@
+/* Review Container */
+.review-container {
+    max-width: 900px;
+    margin: 60px auto;
+    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeInUp 0.8s ease;
+    border: 2px solid rgba(255, 165, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.review-container::before {
+    content: '⭐';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    font-size: 12rem;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+/* Headings */
+.review-container h2,
+.review-container h3 {
+    text-align: center;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.review-container h2 {
+    font-size: 2.8rem;
+    padding-bottom: 20px;
+}
+
+.review-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+    border-radius: 2px;
+}
+
+.review-container h3 {
+    font-size: 2rem;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    color: #8b0000;
+}
+
+/* Form Styling */
+.review-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.review-container form input[type="text"],
+.review-container form input[type="number"],
+.review-container form textarea {
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: white;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.review-container form input:focus,
+.review-container form textarea:focus {
+    outline: none;
+    border-color: #ffa500;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    transform: translateY(-3px);
+    background: #fffef8;
+}
+
+.review-container form input::placeholder,
+.review-container form textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.review-container form textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+}
+
+/* Rating Input Special Styling */
+.review-container form input[type="number"] {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ffa500;
+}
+
+/* Submit Button */
+.review-container form button {
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #00a86b, #2d8b00);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0, 168, 107, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-container form button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.review-container form button:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.review-container form button:hover {
+    background: linear-gradient(135deg, #2d8b00, #00a86b);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 168, 107, 0.6);
+}
+
+.review-container form button:active {
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Reviews List */
+.review-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.review-container ul li {
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    margin: 20px 0;
+    padding: 25px 30px;
+    border-left: 6px solid #00a86b;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.review-container ul li::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 5rem;
+    color: rgba(255, 165, 0, 0.1);
+    font-family: Georgia, serif;
+}
+
+.review-container ul li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 35px rgba(0, 168, 107, 0.2);
+    border-left-width: 8px;
+}
+
+.review-container ul li strong {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.review-container ul li strong::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.review-container ul li em {
+    color: #ffa500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 15px;
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 20px;
+    font-style: normal;
+}
+
+.review-container ul li em::before {
+    content: '⭐ ';
+}
+
+/* Review Text */
+.review-container ul li {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Empty State */
+.review-container ul li:last-child:only-child {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    border-left: none;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .review-container {
+        margin: 40px 20px;
+        padding: 35px 25px;
+    }
+
+    .review-container h2 {
+        font-size: 2.2rem;
+    }
+
+    .review-container h3 {
+        font-size: 1.6rem;
+    }
+
+    .review-container form {
+        padding: 20px;
+    }
+
+    .review-container ul li {
+        padding: 20px 20px;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-container {
+        padding: 25px 15px;
+        margin: 30px 10px;
+    }
+
+    .review-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .review-container h3 {
+        font-size: 1.4rem;
+    }
+
+    .review-container form input,
+    .review-container form textarea {
+        font-size: 0.95rem;
+        padding: 14px 18px;
+    }
+
+    .review-container form button {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+
+    .review-container ul li strong {
+        font-size: 1.1rem;
+    }
+}

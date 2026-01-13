@@ -1,0 +1,331 @@
+/* Hero Section */
+.front {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 95vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(139, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.front-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 60px 70px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 165, 0, 0.3);
+    animation: fadeInScale 1s ease;
+    max-width: 800px;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.front-overlay h2 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90deg, #fff, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 165, 0, 1);
+    }
+}
+
+.front-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.front-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+}
+
+.btn.outline {
+    background: transparent;
+    border: 3px solid #ffa500;
+    box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+}
+
+.btn.outline:hover {
+    background: linear-gradient(135deg, #ffa500, #ff6b6b);
+    border-color: transparent;
+    box-shadow: 0 15px 35px rgba(255, 165, 0, 0.6);
+}
+
+/* Daily Specials Section */
+.specials {
+    background: linear-gradient(135deg, #f9f9f9 0%, #e8e8e8 100%);
+    padding: 80px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.specials::before {
+    content: '🍽️';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 8rem;
+    opacity: 0.05;
+}
+
+.specials h3 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.specials h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+    border-radius: 2px;
+}
+
+.cards-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px 30px;
+}
+
+.cards-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cards-carousel::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.cards-carousel::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+    border-radius: 10px;
+}
+
+.card {
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    width: 300px;
+    flex: 0 0 auto;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 165, 0, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.card h4 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    margin: 20px 0 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.no-specials {
+    font-style: italic;
+    color: #999;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .front-overlay {
+        padding: 40px 30px;
+    }
+    
+    .front-overlay h2 {
+        font-size: 2.5rem;
+    }
+    
+    .front-overlay p {
+        font-size: 1.2rem;
+    }
+    
+    .cards-carousel {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .card {
+        margin-right: 20px;
+    }
+    
+    .specials h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .front-overlay h2 {
+        font-size: 2rem;
+    }
+    
+    .front-overlay p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+    
+    .specials h3 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 85%;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
